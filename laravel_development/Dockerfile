@@ -9,7 +9,7 @@ RUN apt-get install -y curl vim git zip unzip && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Installing necessary extensions
-RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN apt-get update && apt-get install -y libxml2-dev && docker-php-ext-install soap mbstring
 
 # DEVELOPMENT ONLY! Setup XDebug for PHP 7.2
